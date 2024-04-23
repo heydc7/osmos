@@ -28,7 +28,7 @@ func checkParameterReflection(inputURL string) {
 	host := parsedURL.Host
 	parameters := parsedURL.Query()
 
-	if host != "127.0.0.1" {
+	if host != "127.0.0.1" || host != "localhost" {
 		fmt.Println("Invalid Host", err)
 		return
 	}
