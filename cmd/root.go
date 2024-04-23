@@ -25,8 +25,13 @@ func checkParameterReflection(inputURL string) {
 	}
 
 	// Extract host and parameters
-	// host := parsedURL.Host
+	host := parsedURL.Host
 	parameters := parsedURL.Query()
+
+	if host != "127.0.0.1" {
+		fmt.Println("Invalid Host", err)
+		return
+	}
 
 	// Send HTTP request
 	resp, err := http.Get(inputURL)
@@ -42,7 +47,7 @@ func checkParameterReflection(inputURL string) {
 		fmt.Println("Error reading response body:", err)
 		return
 	}
-	fmt.Println(resp.Body)
+	//fmt.Println(resp.Body)
 	// Check if any parameter value is reflected in the response
 	for key, values := range parameters {
 		for _, value := range values {
