@@ -5,9 +5,7 @@ Osmos is a command-line tool written in Go for analyzing HTTP responses and chec
 ### Installation
 
 ```
-git clone https://github.com/your-username/osmos.git
-cd osmos
-go build -o osmos cmd/main.go
+go install github.com/heydc7/osmos@latest
 ```
 
 
